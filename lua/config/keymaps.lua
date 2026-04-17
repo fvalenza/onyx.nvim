@@ -58,8 +58,8 @@ map('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 -- ── Clipboard ──────────────────────────────────────────────────────────────
--- Paste without overwriting register
-map({ 'n', 'v' }, '<leader>p', '"_dP', { desc = 'Paste without losing register' })
+-- Visual mode: replace selection with clipboard without overwriting the register
+map('v', '<leader>p', '"_dP', { desc = 'Paste over selection (keep register)' })
 
 -- ── Spelling ───────────────────────────────────────────────────────────────
 map('n', '<leader>ts', '<cmd>setlocal spell!<cr>', { desc = 'Toggle spell check' })
